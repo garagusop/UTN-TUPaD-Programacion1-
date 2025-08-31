@@ -1,0 +1,158 @@
+#EJERCICIO 1
+# Uso la función input() para pedir la edad al usuario
+edad = int(input("Ingresa tu edad: "))
+# Uso if para verificar si la edad es mayor a 18
+if edad > 18:
+    # Si la condición se cumple, muestro que es mayor de edad
+    print("Es mayor de edad")
+else:
+    # Si no se cumple, muestro que no es mayor de edad
+    print("No es mayor de edad")
+
+#EJERCICIO 2
+# Uso la función input() para pedir la nota al usuario
+nota = int(input("Ingresa tu nota: "))
+# Uso if para verificar si la nota es mayor o igual a 6
+if nota >= 6:
+    # Si la condición se cumple, muestro que está aprobado
+    print("Aprobado")
+
+else:
+    # Si no se cumple, muestro que está desaprobado
+    print("Desaprobado")
+
+#EJERCICIO 3
+# Uso la función input() para pedir un número al usuario
+numero = int(input("Ingresa un número par: "))
+# Uso el operador % para calcular el resto de la división por 2
+if numero % 2 == 0:
+    # Si el resto es 0, el número es par
+    print("Ha ingresado un número par")
+else:
+    # Si el resto no es 0, el número es impar
+    print("Por favor, ingrese un número par")
+
+#EJERCICIO 4
+# Uso input() para pedir la edad al usuario
+edad = int(input("Ingresa tu edad: "))
+# Uso if-elif-else para clasificar según los rangos de edad
+if edad < 12:
+    print("Niño/a")
+elif edad < 18:
+    print("Adolescente")
+elif edad < 30:
+    print("Adulto/a joven")
+else:
+    print("Adulto/a")
+
+#EJERCICIO 5
+# Uso input() para pedir la contraseña al usuario
+password = input("Ingresa una contraseña: ")
+# Uso len() para verificar la cantidad de caracteres de la contraseña
+if 8 <= len(password) <= 14:
+    # Si tiene entre 8 y 14 caracteres, es válida
+    print("Ha ingresado una contraseña correcta")
+else:
+    # Si no, muestro mensaje para ingresar otra constraseña
+    print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
+
+#EJERCICIO 6
+# Importo desde la libreria
+import random
+from statistics import mean, median, mode
+
+# Genero una lista de 50 números aleatorios entre 1 y 100
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
+# Calculo la media con mean()
+media = mean(numeros_aleatorios)
+# Calculo la mediana con median()
+mediana = median(numeros_aleatorios)
+# Calculo la moda con mode()
+moda = mode(numeros_aleatorios)
+
+# Muestro la lista y los valores calculados
+print("Lista generada:", numeros_aleatorios)
+print("Media:", media, "Mediana:", mediana, "Moda:", moda)
+
+# Uso condicionales para verificar el tipo de sesgo
+if media > mediana > moda:
+    print("Sesgo positivo")
+elif media < mediana < moda:
+    print("Sesgo negativo")
+else:
+    print("Sin sesgo")
+
+#EJERCICIO 7
+# Uso input() para pedir una palabra o frase
+texto = input("Ingresa una palabra o frase: ")
+# Accedo al último carácter con texto[-1] y lo paso a minúscula con lower()
+if texto[-1].lower() in "aeiou":
+    # Si termina en vocal, le agrego un signo de exclamación
+    print(texto + "!")
+
+else:
+    # Si no, lo muestro como fue ingresado
+    print(texto)
+
+#EJERCICIO 8
+# Uso input() para pedir el nombre del usuario
+nombre = input("Ingresa tu nombre: ")
+# Pido una opción al usuario
+opcion = int(input("Elige opción (1=mayúsculas, 2=minúsculas, 3=primera en mayúscula): "))
+
+# Uso condicionales para hacer la transformación
+if opcion == 1:
+    # Convierto a mayúsculas con upper()
+    print(nombre.upper())
+elif opcion == 2:
+    # Convierto a minúsculas con lower()
+    print(nombre.lower())
+elif opcion == 3:
+    # Convierto la primera letra a mayúscula con title()
+    print(nombre.title())
+else:
+    # Si no elige una opción válida
+    print("Opción inválida")
+
+
+#EJERCICIO 9
+# Uso input() para pedir la magnitud del terremoto
+magnitud = float(input("Ingresa la magnitud del terremoto: "))
+
+# Uso condicionales para clasificar la magnitud
+if magnitud < 3:
+    print("Muy leve")
+elif magnitud < 4:
+    print("Leve")
+elif magnitud < 5:
+    print("Moderado")
+elif magnitud < 6:
+    print("Fuerte")
+elif magnitud < 7:
+    print("Muy fuerte")
+else:
+    print("Extremo")
+
+#EJERCICIO 10
+# Uso input() para preguntar en qué hemisferio está el usuario
+hemisferio = input("¿En qué hemisferio estás? (N/S): ").upper()
+# Pido el mes y el día
+mes = int(input("Ingresa el mes (1-12): "))
+dia = int(input("Ingresa el día: "))
+
+# Verifico la estación con condicionales según las fechas ingresadas por el usuario segun la tabla de las estaciones del año
+if (mes == 12 and dia >= 21) or (1 <= mes <= 2) or (mes == 3 and dia <= 20):
+    estacion = "Invierno" if hemisferio == "N" else "Verano"
+elif (mes == 3 and dia >= 21) or (4 <= mes <= 5) or (mes == 6 and dia <= 20):
+    estacion = "Primavera" if hemisferio == "N" else "Otoño"
+elif (mes == 6 and dia >= 21) or (7 <= mes <= 8) or (mes == 9 and dia <= 20):
+    estacion = "Verano" if hemisferio == "N" else "Invierno"
+else:
+    estacion = "Otoño" if hemisferio == "N" else "Primavera"
+
+# Muestro como resultado la estación 
+print("La estación es:", estacion)
+
+
+
+
